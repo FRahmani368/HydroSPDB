@@ -25,7 +25,7 @@ if not os.path.exists(__C.DATA_PATH):
 # data config
 __C.GAGES = edict()
 # __C.GAGES.DOWNLOAD = True
-__C.GAGES.DOWNLOAD = True
+__C.GAGES.DOWNLOAD = False
 __C.GAGES.DOWNLOAD_FROM_OWEN = False
 __C.GAGES.ARE_YOU_OWEN = False
 __C.GAGES.DOWNLOAD_FROM_WEB = False
@@ -74,9 +74,9 @@ __C.GAGES.wateruse_file = os.path.join(__C.GAGES.gagests_dir, "Dataset10_WaterUs
 # NID database
 __C.NID = edict()
 __C.NID.NID_DIR = os.path.join(__C.DATA_PATH, "nid")
-__C.NID.NID_FILE = os.path.join(__C.NID.NID_DIR, "NID2018_U.xlsx")
+__C.NID.NID_FILE = os.path.join(__C.NID.NID_DIR, "NID2019_U.xlsx")
 __C.NID.NID_URL = 'https://nid.sec.usace.army.mil/ords/NID_R.DOWNLOADFILE?InFileName={nidFile}'.format(
-    nidFile="NID2018_U.xlsx")
+    nidFile="NID2019_U.xlsx")
 # EPSG:4269 --  https://epsg.io/4269
 __C.NID.NID_EPSG = 4269
 
@@ -189,8 +189,8 @@ __C.GAGES.regions = ['bas_ref_all', 'bas_nonref_CntlPlains', 'bas_nonref_EastHgh
                      'bas_nonref_WestPlains', 'bas_nonref_WestXeric']
 
 __C.GAGES.gageIdScreen = None
-__C.GAGES.streamflowScreenParams = {'missing_data_ratio': 0, 'zero_value_ratio': 1}
-__C.GAGES.attrScreenParams = None  # {'DOR': -0.02, 'dam_num': 0}
+__C.GAGES.streamflowScreenParams = {'missing_data_ratio': 0.95, 'zero_value_ratio': 1}
+__C.GAGES.attrScreenParams = {'DOR': -0.02, 'dam_num': 0}   # None  # {'DOR': -0.02, 'dam_num': 0}
 
 attrBasin = ['DRAIN_SQKM', 'ELEV_MEAN_M_BASIN', 'SLOPE_PCT']
 attrLandcover = ['DEVNLCD06', 'FORESTNLCD06', 'PLANTNLCD06', 'WATERNLCD06', 'SNOWICENLCD06', 'BARRENNLCD06',

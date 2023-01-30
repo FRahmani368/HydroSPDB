@@ -615,7 +615,7 @@ class GagesSource(DataSource):
             data_file = os.path.join(dir_gage_attr, 'conterm_' + key + '.txt')
             # 各属性值的“参考来源”是不需读入的
             if key == 'bas_classif':
-                data_temp = pd.read_csv(data_file, sep=',', dtype={'STAID': str}, usecols=range(0, 4))
+                data_temp = pd.read_csv(data_file, sep=',', encoding='unicode_escape' , dtype={'STAID': str}, usecols=range(0, 4))
             else:
                 data_temp = pd.read_csv(data_file, sep=',', dtype={'STAID': str})
             if key == 'flowrec':
